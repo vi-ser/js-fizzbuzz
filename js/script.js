@@ -29,22 +29,36 @@ for (let i = 1; i <= 100; i++) {
     if (i % 3 == 0) {
         //controllo che il numero sia divisibile ANCHE per 5
         if (i % 5 == 0) {
+            // stampo "fizzbuzz" al posto di i
             newElement.innerHTML = "fizzbuzz";
+
+            // inserisco la classe "fizzbuzz"
+            newElement.className += " fizzbuzz";
+
         }
         else {
+            // stampo "fizz" al posto di i"
             newElement.innerHTML = "fizz";
+
+            // inserisco la classe "fizz"
+            newElement.className += " fizz";
         }
 
     }
     // controllo che il numero sia divisibile per 5
     else if (i % 5 == 0) {
+        // stampo "buzz" al posto di i
         newElement.innerHTML = "buzz";
+
+        // inserisco la classe "buzz"
+        newElement.className += " buzz";
     }
 
     else {
         newElement.innerHTML = i;
     }
 
+    // "appendo" l'elemento creato alla griglia
     gridElement.append(newElement);
 
 }
