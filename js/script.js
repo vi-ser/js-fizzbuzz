@@ -15,26 +15,36 @@ Applica stili differenti agli elementi aggiunti al DOM nel BONUS 1, a seconda ch
 Se sei a corto di idee per lo stile, potresti prendere spunto dallo screenshot fornito in consegna.
 */
 
-// conta dei numeri da 1 a 100
+// creazione griglia con i numeri da 1 a 100
+const gridElement = document.querySelector("#grid");
+
 for (let i = 1; i <= 100; i++) {
+
+    // creo un elemento html
+    const newElement = document.createElement("div");
+    newElement.className = "square";
+    newElement.innerHTML = i;
 
     // controllo che il numero sia divisibile per 3
     if (i % 3 == 0) {
         //controllo che il numero sia divisibile ANCHE per 5
         if (i % 5 == 0) {
-            console.log("FizzBuzz");
+            newElement.innerHTML = "fizzbuzz";
         }
         else {
-            console.log("Fizz");
+            newElement.innerHTML = "fizz";
         }
 
     }
     // controllo che il numero sia divisibile per 5
     else if (i % 5 == 0) {
-        console.log("Buzz");
+        newElement.innerHTML = "buzz";
     }
 
     else {
-        console.log(i);
+        newElement.innerHTML = i;
     }
+
+    gridElement.append(newElement);
+
 }
